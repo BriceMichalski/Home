@@ -39,11 +39,3 @@ serverBlock: |-
       proxy_set_header Connection $connection_upgrade;
     }
   }
-
-# serverBlock: |-
-
-
-#   server {
-
-#   }
-

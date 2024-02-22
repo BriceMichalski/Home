@@ -13,6 +13,7 @@ releases:
   namespace: home
   chart: bitnami/nginx
   missingFileHandler: Warn
+  version: 15.5.1
   values:
   - modules/home-assistant.yaml
   secrets:

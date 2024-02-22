@@ -7,6 +7,11 @@ ingress:
     kubernetes.io/ingress.class: traefik
     traefik.ingress.kubernetes.io/router.entrypoints: websecure
     external-dns.alpha.kubernetes.io/target: "ipv4.mbcaas.com"
+  tls: true
+  extraTls:
+  - hosts:
+    - home.michalski.fr
+    secretName: michalski.fr-cert
 
 resources:
   limits:
@@ -15,6 +20,7 @@ resources:
   requests:
     cpu: 100m
     memory: 100Mi
+
 
 
 serverBlock: |-

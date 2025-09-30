@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: poc-self-signed
+  namespace: home
+  annotations:
+    cert-manager.io/cluster-issuer: selfsigned
+spec:
+  rules:
+  - host: emoh.michalski.fr
+    http:
+      paths:
+      - backend:
+          service:
+            name: home-assistant-nginx
+            port:
+              name: http
+        path: /
+        pathType: Prefix
+  tls:
+  - hosts:
+    - emoh.michalski.fr
+    secretName: poc-cert

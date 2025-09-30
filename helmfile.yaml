@@ -18,3 +18,13 @@ releases:
   - modules/home-assistant.yaml
   secrets:
   - ./secrets.sops.yaml
+
+- name: frigate
+  namespace: home
+  chart: bitnami/nginx
+  missingFileHandler: Warn
+  version: 15.5.1
+  values:
+  - modules/frigate.yaml
+  secrets:
+  - ./secrets.sops.yaml

@@ -1,0 +1,13 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: michalski.fr
+  namespace: home
+spec:
+  dnsNames:
+  - "michalski.fr"
+  - "*.michalski.fr"
+  secretName: michalski.fr-cert
+  issuerRef:
+    name: letsencrypt
+    kind: ClusterIssuer
